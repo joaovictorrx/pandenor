@@ -13,3 +13,33 @@
 
 body
     overflow-x: hidden
+
+#slider
+    .item
+        height: calc(100vh - 82px)
+        .header-title
+            border-radius: 50px 50px 0px 50px
+            font-family: $noah-regular
+            color: $red
+            h2
+                font-size: 30px
+        .header-link
+            width: 135px
+            font-family: $noah-bold
+            background-color: $blue
+            color: white
+            border-radius: 0px 50px 50px 50px
+            position: relative
+            right: -135px
+.title
+    font-family: $noah-bold
+    font-size: 64px
+    color: $blue
+
+
+@media (max-width: 996px)
+    #slider
+        .item
+            .header-link
+                width: 200px
+                right: 0

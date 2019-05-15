@@ -1,9 +1,4 @@
 $(document).ready(function () {
-    $('body').scrollspy({
-        target: '#top-menu-nav',
-        offset: 100
-    })
-
     $("a.smooth-scroll").on('click', function (event) {
         // Make sure this.hash has a value before overriding default behavior
         if (this.hash !== "") {
@@ -22,10 +17,16 @@ $(document).ready(function () {
         } // End if
     });
 
-    var hamburger = document.querySelector(".hamburger");
+    $('.owl-carousel').owlCarousel({
+        loop:true,
+        margin:10,
+        nav:false,
+        items:1
+    })
+/*     var hamburger = document.querySelector(".hamburger");
     hamburger.addEventListener("click", function() {
         hamburger.classList.toggle("is-active");
     });
-
+ */
     /* new WOW().init(); */
 })

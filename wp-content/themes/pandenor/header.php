@@ -59,7 +59,7 @@
 		</div>
 	</div>
 </nav>
-<div class="secondary-nav d-none d-lg-flex justify-content-between">
+<!-- <div class="secondary-nav d-none d-lg-flex justify-content-between">
 	<div class="left-side flex-fill"></div>
 	<div class="middle"></div>
 	<div class="right-side flex-fill"></div>
@@ -80,4 +80,4 @@
 			</ul>
 		</div>
 	</div>
-</nav>
+</nav> -->
