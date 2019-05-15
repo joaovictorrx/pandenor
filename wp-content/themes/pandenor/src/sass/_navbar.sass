@@ -1,0 +1,64 @@
+.navbar
+    height: 82px
+    background: $light-grey
+.secondary-nav
+    position: absolute
+    top: 82px
+    width: 100%
+    height: 82px
+    z-index: -1
+    .left-side
+        background: $red
+        height: 100%
+        border-radius: 0px 50px 50px 0px
+    .middle
+        height: 100%
+        width: 240px
+    .right-side
+        background: $blue
+        height: 100%
+        border-radius: 50px 0px 0px 50px
+.secondary-navbar
+    z-index: -1
+    background: transparent
+    .secondary-navbar-title
+        max-width: 345px
+        a
+            font-size: 40px
+    .secondary-navbar-subtitle
+        a
+            font-size: 20px
+    .nav-link
+        color: white
+.brand-logo-m
+    width: 60px
+.brand-wrapper
+    position: absolute
+    left: 50%
+    transform: translate(-50%)
+    width: 400px
+    .brand-bg-path
+        position: absolute
+        width: 400px
+        height: auto
+        top: 50px
+        left: 50%
+        transform: translate(-50%)
+    .brand-logo
+        position: absolute
+        width: 141px
+        height: auto
+        top: 0
+        left: 50%
+        transform: translate(-50%)
+        transition: .3s ease
+        &:hover
+            transform: translate(-50%) scale(1.02)
+.nav-link
+    font-family: $noah-regular
+    font-size: 20px
+    color: $grey
+
+@media (max-width: 966px)
+    .navbar
+        height: auto
