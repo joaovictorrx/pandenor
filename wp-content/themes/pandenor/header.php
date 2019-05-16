@@ -59,25 +59,3 @@
 		</div>
 	</div>
 </nav>
-<!-- <div class="secondary-nav d-none d-lg-flex justify-content-between">
-	<div class="left-side flex-fill"></div>
-	<div class="middle"></div>
-	<div class="right-side flex-fill"></div>
-</div>
-<nav class="navbar navbar-expand-lg d-none d-lg-flex secondary-navbar">
-	<div class="container">
-		<div class="collapse navbar-collapse justify-content-between">
-			<ul class="navbar-nav flex-fill justify-content-between mt-2 mt-lg-0 secondary-navbar-title">
-				<li class="nav-item">
-					<a class="nav-link" href="#">Quem Somos</a>
-				</li>
-			</ul>
-			<div class="d-none d-lg-block" style="width: 400px"></div>
-			<ul class="navbar-nav flex-fill justify-content-between mt-2 mt-lg-0 ml-n2 secondary-navbar-subtitle">
-				<li class="nav-item">
-					<a class="nav-link" href="#">Lorem ipsum dolor sit armet</a>
-				</li>
-			</ul>
-		</div>
-	</div>
-</nav> -->

@@ -96,7 +96,7 @@ add_action('admin_menu', 'add_custom_menu_position'); */
 
 function remove_menu () 
 {
-    remove_menu_page( 'edit.php?post_type=page' );
+    //remove_menu_page( 'edit.php?post_type=page' );
     remove_menu_page( 'edit-comments.php' );
     remove_menu_page('edit.php');
 } 
