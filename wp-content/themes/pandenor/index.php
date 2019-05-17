@@ -2,59 +2,74 @@
 
 <section id="slider">
     <div class="owl-carousel">
-        <div class="item" style="background:url(<?php bloginfo('template_url');?>/img/home-bg.png) no-repeat center / cover;">
-            <div class="container h-100 d-flex align-items-center">
-                <div class="row">
-                    <div class="col-12 col-lg-6">
-                        <div class="card header-title p-4">
-                            <h2 class="">Novo Prédio Administrativo será inaugurado com almoço no dia 21 de Maio.</h2>
-                        </div>
-                        <div class="card header-link pull-right p-4">
-                            <h2 class="">Saiba mais</h2>
+        <?php 
+            $args = array('post_type' => 'banners');
+            $wp_query = new WP_Query($args);
+        ?>
+        <?php if ( $wp_query->have_posts() ) : while ( $wp_query->have_posts() ) : $wp_query->the_post(); ?>
+            
+            <div class="item" style="background:url(<?= get_field('imagem')['url'] ?>) no-repeat center / cover;">
+                <div class="container h-100 d-flex align-items-center">
+                    <div class="row">
+                        <div class="col-12 col-lg-6">
+                                <div class="card header-title p-4">
+                                    <h2 class=""><?php the_title() ?></h2>
+                                </div>
+                                <div class="card header-link pull-right p-4">
+                                    <a class="text-white" style="font-size:30px" href="<?php the_field('link') ?>">Saiba mais</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
+        <?php endwhile; wp_reset_postdata(); endif; ?>
 </section>
 
+<?php 
+    $args = array('post_type' => 'page', 'page_id'=> '54');
+    $wp_query = new WP_Query($args);
+?>
 <section class="position-relative py-5">
-    <img class="half-bg-right d-none d-lg-block grey-scale" src="<?php bloginfo('template_url');?>/img/home-section-1-bg.png" alt="">
+    <img class="half-bg-right d-none d-lg-block grey-scale" src="
+        <?php if ( $wp_query->have_posts() ) : while ( $wp_query->have_posts() ) : $wp_query->the_post(); ?>
+            <?= get_field('bg_nossas_solucoes')['url'] ?>
+        <?php endwhile; endif; ?>
+        " alt="">
+    
     <div class="container py-5 h-100 d-flex align-items-center">
         <div class="row">
             <div class="col-12 col-lg-6 px-4 px-lg-2">
                 <h2 class="title mb-5">Nossas Soluções</h2>
-                <p class="text-justify">
-                    Com rapidez e planejamento nossa estrutura operaciona soluções com o objetivo de entregar para sua empresa um padrão operacional diferenciado que reduz custo, aumenta a produtividade e produz satisfação.
-                </p>
-                <p class="text-justify">
-                    Vantagens de adquirir a PANDENOR SOLUTIONS:
-                </p>
-                <ul class="list-unstyled text-justify">
-                    <li>Agilidade nos processos diários;</li>
-                    <li>Segurança sempre;</li>
-                    <li>Preocupação com o Meio Ambiente;</li>
-                    <li>Tecnologia de ponta para acompanhamento.</li>
-                </ul>
+                <div class="text-justify">
+                    <?php if ( $wp_query->have_posts() ) : while ( $wp_query->have_posts() ) : $wp_query->the_post(); ?>
+                        <?php the_field('nossas_solucoes') ?>
+                    <?php endwhile; endif; ?>
+                </div>
 
-                <a href="#" class="btn btn-red mt-5">Ver Soluções</a>
+                <a href="<?php bloginfo('url');?>/solucoes" class="btn btn-red mt-5">Ver Soluções</a>
             </div>
         </div>
     </div>
 </section>
 
 <section class="position-relative text-white bg-primary py-5">
-    <img class="half-bg-left d-none d-lg-block" src="<?php bloginfo('template_url');?>/img/home-section-2-bg.png" alt="">
+    <img class="half-bg-left d-none d-lg-block" src="
+    <?php if ( $wp_query->have_posts() ) : while ( $wp_query->have_posts() ) : $wp_query->the_post(); ?>
+            <?= get_field('background_estrutura')['url'] ?>
+        <?php endwhile; endif; ?>
+    " alt="">
     <div class="container h-100 d-flex align-items-center py-5">
         <div class="row">
             <div class="col-12 col-lg-5 offset-lg-7 px-4 px-lg-2">
                 <h2 class="title text-white mb-5">Estrutura Robusta</h2>
-                <p class="text-justify">
-                    O terminal possui uma estrutura de mais de 120.000m3 para armazenagem de granéis líquidos, dividido entre 32 tanques.
-                </p>
+                <div class="text-justify">
+                    <?php if ( $wp_query->have_posts() ) : while ( $wp_query->have_posts() ) : $wp_query->the_post(); ?>
+                        <?php the_field('estrutura') ?>
+                    <?php endwhile; endif; ?>
+                </div>
 
-                <a href="#" class="btn btn-red mt-5">Saber mais</a>
+                <a href="<?php bloginfo('url');?>/estrutura" class="btn btn-red mt-5">Saber mais</a>
             </div>
         </div>
     </div>
@@ -66,7 +81,9 @@
             <div class="col-12 text-center">
                 <h2 class="title text-red mb-3">Certificados de Gestão</h2>
                 <p class="text-light-grey mb-5">
-                    O terminal é certificado nas normas de Sistemas de Gestão e cumpre os mais rigorosos requisitos de normas internacionais, relacionadas abaixo:
+                    <?php if ( $wp_query->have_posts() ) : while ( $wp_query->have_posts() ) : $wp_query->the_post(); ?>
+                        <?php the_field('descricao_certificados_de_gestao') ?>
+                    <?php endwhile; endif; ?>
                 </p>
             </div>
         </div>
@@ -74,35 +91,18 @@
         <div class="row justify-content-center">
             <div class="col-12 text-center">
                 <ul class="list-unstyled text-left grey-list">
-
-                    <li class="d-flex align-items-center mb-3">
-                        <i class="fa fa-circle fa-2x text-red mr-3" aria-hidden="true"></i>
-                        <p class="mb-0">
-                            <span>ISO 9001:2015</span> - Sistema de Gestão da Qualidade</span>
-                        </p> 
-                    </li>
-
-                    <li class="d-flex align-items-center mb-3">
-                        <i class="fa fa-circle fa-2x text-red mr-3" aria-hidden="true"></i>
-                        <p class="mb-0">
-                            <span>ISO 14001:2015</span> - Sistema de Gestão Ambiental</span>
-                        </p> 
-                    </li>
-
-                    <li class="d-flex align-items-center mb-3">
-                        <i class="fa fa-circle fa-2x text-red mr-3" aria-hidden="true"></i>
-                        <p class="mb-0">
-                            <span>OHSAS 18001:2007</span> - Sistrema de Gestão de Saúde e Segurança Operacional</span>
-                        </p> 
-                    </li>
-
-                    <li class="d-flex align-items-center mb-3">
-                        <i class="fa fa-circle fa-2x text-red mr-3" aria-hidden="true"></i>
-                        <p class="mb-0">
-                            <span>ISGOTT</span> - International Safety Guide for Oil Tankers and Terminals.</span>
-                        </p> 
-                    </li>
-
+                    <?php if ( $wp_query->have_posts() ) : while ( $wp_query->have_posts() ) : $wp_query->the_post(); ?>
+                        <?php if( have_rows('certificados') ): ?>
+                            <?php while( have_rows('certificados') ): the_row();?>
+                                <li class="d-flex align-items-center mb-3">
+                                    <i class="fa fa-circle fa-2x text-red mr-3" aria-hidden="true"></i>
+                                    <p class="mb-0">
+                                        <span><?php the_sub_field('certificado') ?></span> - <?php the_sub_field('descricao') ?></span>
+                                    </p> 
+                                </li>
+                            <?php endwhile; ?>
+                        <?php endif; ?>
+                    <?php endwhile; endif; ?>
                 </ul>
             </div>
         </div>

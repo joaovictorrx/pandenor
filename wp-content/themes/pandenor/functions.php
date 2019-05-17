@@ -29,18 +29,20 @@ function register_my_post_types()
         'supports'          => array('title'),
     ));
 
-    /* register_post_type('portifolio',
+    register_post_type('footer',
     array(
         'labels' => array(
-            'name'          => __('Portifólio'),
-            'singular_name' => __('Portifólio'),
-            'add_new_item'  => __('Adicionar Novo Item ao Portifólio'),
-            'edit_item'     => __('Editar item do Portifólio'),
+            'name'          => __('Footer'),
+            'singular_name' => __('Footer'),
+            'edit_item'     => __('Editar Footer'),
         ),
         'public'            => true,
-        'menu_icon'         => 'dashicons-star-filled',
+        'menu_icon'         => 'dashicons-align-center',
+        'show_in_menu'         => false,
         'supports'          => array('title'),
     ));
+    
+    /*
     
     register_post_type('services',
     array(
@@ -88,11 +90,11 @@ function pagination()
     
 } */
 
-/* function add_custom_menu_position() {
+function add_custom_menu_position() {
     
-    add_menu_page('about', 'Quem Somos', 'edit_posts', admin_url('post.php?post=9&action=edit'), null ,'dashicons-info', 25); 
+    add_menu_page('footer', 'Footer', 'edit_posts', admin_url('post.php?post=73&action=edit'), null ,'dashicons-align-center', 25); 
 }
-add_action('admin_menu', 'add_custom_menu_position'); */
+add_action('admin_menu', 'add_custom_menu_position');
 
 function remove_menu () 
 {
