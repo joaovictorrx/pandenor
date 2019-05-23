@@ -19,8 +19,11 @@ $(document).ready(function () {
 
     $('.owl-carousel').owlCarousel({
         loop:true,
+        dots:false,
         margin:10,
         nav:false,
+        autoplay:true,
+        autoplayTimeout:5000,
         items:1
     })
 /*     var hamburger = document.querySelector(".hamburger");
