@@ -10,10 +10,10 @@
             
             <div class="item" style="background:url(<?= get_field('imagem')['url'] ?>) no-repeat center / cover;">
                 <div class="container h-100">
-                    <div class="row" style="position: relative; top: 50%;transform: translateY(-50%);">
+                    <div class="row" style="position: relative; top: 75%;transform: translateY(-50%);">
                         <div class="col-12 col-lg-6">
                         <?php if(get_the_title() != ''): ?>
-                            <div class="card header-title p-4">
+                            <div class="card header-title text-center p-4">
                                 <h2><?php the_title() ?></h2>
                             </div>
                         <?php endif; ?>

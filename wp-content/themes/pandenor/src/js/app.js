@@ -23,7 +23,7 @@ $(document).ready(function () {
         margin:10,
         nav:false,
         autoplay:true,
-        autoplayTimeout:5000,
+        autoplayTimeout:6000,
         items:1
     })
 /*     var hamburger = document.querySelector(".hamburger");

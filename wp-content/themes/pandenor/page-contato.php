@@ -17,7 +17,7 @@ label{
   
 </style>
 <section class="py-5 mt-n5" style="background:url(<?php the_post_thumbnail_url(); ?>) no-repeat center / cover; min-height: 720px">
-    <div class="top-spacing"></div>
+    <div class="top-spacing d-none d-lg-block"></div>
     <div class="container">
         <div class="row">
             <div class="col-12 py-5">

@@ -6,7 +6,7 @@
     <div class="top-spacing"></div>
     <div class="container">
         <div class="row">
-            <div class="col-12 py-5">
+            <div class="col-12 col-lg-6 py-5">
                 <div class="card px-5 rounded-card py-5">
                     <div class="row">
                         <div class="col-12">
@@ -17,14 +17,19 @@
                         <div class="col-12 mb-5 px-3">
                             <div class="text-justify">
                                 <?php if ( $wp_query->have_posts() ) : while ( $wp_query->have_posts() ) : $wp_query->the_post(); ?>
-                                    <?php the_field('texto') ?>
-                                <?php endwhile; wp_reset_postdata(); endif; ?>
-                            </div>
-                        </div>
-                        <div class="col-12 col-lg-6 mb-5 px-3">
-                            <div class="text-justify">
-                                <?php if ( $wp_query->have_posts() ) : while ( $wp_query->have_posts() ) : $wp_query->the_post(); ?>
-                                    <?php the_field('conteudo_coluna_direita') ?>
+                                    <?php the_content() ?>
+                                    <ul class="list-unstyled text-left grey-list">
+                                        <?php if( have_rows('certificados') ): ?>
+                                            <?php while( have_rows('certificados') ): the_row();?>
+                                                <li class="d-flex align-items-center mb-3">
+                                                    <i class="fa fa-circle fa-2x text-red mr-3" aria-hidden="true"></i>
+                                                    <p class="mb-0">
+                                                        <span><?php the_sub_field('certificado') ?></span> - <?php the_sub_field('descricao') ?></span>
+                                                    </p> 
+                                                </li>
+                                            <?php endwhile; ?>
+                                        <?php endif; ?>
+                                    </ul>
                                 <?php endwhile; wp_reset_postdata(); endif; ?>
                             </div>
                         </div>
